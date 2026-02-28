@@ -1,0 +1,11 @@
+name = "skillrank"
+main = "src/index.ts"
+compatibility_date = "2026-02-28"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "skillrank-db"
+database_id = ""
+
+[triggers]
+crons = ["0 6 * * *"]
