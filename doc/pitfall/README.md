@@ -7,7 +7,7 @@ encountered during SkillRank development.
 
 <!-- INDEX:START -->
 | ID | Title | Area | Severity | Status |
-|----|-------|------|----------|--------|
+| --- | --- | --- | --- | --- |
 <!-- INDEX:END -->
 
 ## Deferred

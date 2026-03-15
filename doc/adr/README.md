@@ -9,7 +9,7 @@ create a new ADR that supersedes the original.
 
 <!-- INDEX:START -->
 | ADR | Title | Status | Date |
-|-----|-------|--------|------|
+| --- | --- | --- | --- |
 | 001 | [Hub-as-Domain PageRank Model](001-hub-as-domain-pagerank-model.md) | Proposed | 2026-02-28 |
 | 002 | [D1 Database Schema Design](002-d1-schema-design.md) | Proposed | 2026-02-28 |
 <!-- INDEX:END -->
@@ -27,6 +27,8 @@ To create a new ADR:
 
 Status: Proposed
 Date: YYYY-MM-DD
+
+> Discussion: [discussion log](NNN-topic.discussion.md)
 
 ## Context
 

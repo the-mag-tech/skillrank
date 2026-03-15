@@ -104,7 +104,7 @@ function generateAdrTable(entries: AdrEntry[]): string {
   );
   return [
     '| ADR | Title | Status | Date |',
-    '|-----|-------|--------|------|',
+    '| --- | --- | --- | --- |',
     ...rows,
   ].join('\n');
 }
@@ -117,7 +117,7 @@ function generatePitfallTable(entries: PitEntry[]): string {
   );
   return [
     '| ID | Title | Area | Severity | Status |',
-    '|----|-------|------|----------|--------|',
+    '| --- | --- | --- | --- | --- |',
     ...rows,
   ].join('\n');
 }
@@ -162,7 +162,7 @@ function injectIndex(readmePath: string, table: string): void {
 function processAdr(): void {
   const dir = join(DOC_ROOT, 'adr');
   const files = readdirSync(dir)
-    .filter((f) => /^\d{3}-.*\.md$/.test(f))
+    .filter((f) => /^\d{3}-.*\.md$/.test(f) && !f.endsWith('.discussion.md'))
     .map((f) => join(dir, f));
 
   const entries = files.map(parseAdr).filter(Boolean) as AdrEntry[];

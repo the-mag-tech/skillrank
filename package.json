@@ -8,7 +8,10 @@
     "deploy": "wrangler deploy",
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
-    "generate-index": "tsx scripts/generate-doc-index.ts all"
+    "generate-index": "tsx scripts/generate-doc-index.ts all",
+    "gen:index": "tsx scripts/generate-doc-index.ts all",
+    "doc:check": "tsx scripts/verify-doc-governance.ts",
+    "doc:governance": "pnpm gen:index && pnpm doc:check"
   },
   "devDependencies": {
     "typescript": "^5.7.0",
@@ -16,5 +19,6 @@
     "wrangler": "^4.0.0",
     "tsx": "^4.0.0",
     "@cloudflare/workers-types": "^4.0.0"
-  }
+  },
+  "packageManager": "pnpm@10.24.0+sha512.01ff8ae71b4419903b65c60fb2dc9d34cf8bb6e06d03bde112ef38f7a34d6904c424ba66bea5cdcf12890230bf39f9580473140ed9c946fef328b6e5238a345a"
 }

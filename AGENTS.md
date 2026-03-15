@@ -28,10 +28,13 @@ V1 stores signals without using them in ranking; V2 integrates them into PageRan
 4. **Zero-mock testing**: Test against real services where possible.
    Use D1 local bindings or Miniflare for Cloudflare Workers testing.
 5. **DRY principle**: Every piece of knowledge has a single, authoritative representation.
+6. **Discussion-first ADR flow**: Every ADR must include
+   `> Discussion: [discussion log](xxx.discussion.md)`.
+7. **Governance gate**: Before handoff/merge, run `pnpm doc:governance` and keep it passing.
 
 ## Architecture Overview
 
-```
+```text
 ┌──────────────────────────────────────────────────────┐
 │  CF Worker — SkillRank Engine                        │
 │                                                      │
@@ -58,7 +61,7 @@ V1 stores signals without using them in ranking; V2 integrates them into PageRan
 ## Reference Sub-Documents
 
 | Document | Path | When to read |
-|----------|------|--------------|
+| --- | --- | --- |
 | Architecture details | `doc/agents/architecture.md` | Deep-dive into module design, data flow |
 | Known issues | `doc/agents/known-issues.md` | Debugging, workarounds, open items |
 | DX Tooling | `doc/agents/dx-tooling.md` | Skills, commands, doc governance |
@@ -79,4 +82,6 @@ pnpm dev                        # Local dev (wrangler dev)
 pnpm test                       # Run tests (vitest)
 pnpm deploy                     # Deploy to CF Workers
 npx tsx scripts/generate-doc-index.ts all  # Regenerate doc indexes
+pnpm doc:check                  # Validate ADR metadata + discussion links + index markers
+pnpm doc:governance             # gen:index + doc:check
 ```
