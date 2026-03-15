@@ -2,10 +2,13 @@
 
 ## What is SkillRank
 
-A PageRank-inspired ranking engine for AI Agent Skill Hubs.
-Skill Hubs (ClawHub, SkillKit Marketplace, Cursor Marketplace, etc.) are the **Domains**.
-Individual skills are **Metadata** under each Domain node.
-The engine aggregates, scores, and ranks hubs — not individual skills.
+面向自媒体创作者的 **Skill 发现与排名服务**，同时作为 **Prism Scout 的上游数据源**。
+
+- **面向创作者**：多维索引（Skill / Hub / 创作者 / Domain / 平台），
+  推荐最适合其 IP 定位和目标平台的 AI 能力模块
+- **面向 Prism**：Scout Worker 查询 SkillRank 决定"从哪里收录什么 Skill"
+- **Hub-as-Domain**：Hub 是主要排名节点，Skill 是 Hub 下的 Metadata
+- **V1 平台**：小红书、微信公众号、X、Instagram、Threads（图文优先）
 
 ## Mandatory Rules
 
@@ -23,27 +26,26 @@ The engine aggregates, scores, and ranks hubs — not individual skills.
 ## Architecture Overview
 
 ```
-┌──────────────────────────────────────────────────────┐
-│  CF Worker — SkillRank Engine                        │
-│                                                      │
-│  ┌──────────┐  ┌──────────┐  ┌──────────────────┐   │
-│  │ Registry │  │ Crawler  │  │ Ranker (PageRank) │   │
-│  │ (Hubs)   │──│ (Fetch)  │──│ (Scoring)         │   │
-│  └──────────┘  └──────────┘  └──────────────────┘   │
-│       │                             │                │
-│  ┌──────────┐                  ┌─────────┐           │
-│  │ D1 (SQL) │                  │ API     │           │
-│  │ Railway  │                  │ /rank   │           │
-│  └──────────┘                  │ /hubs   │           │
-│                                │ /search │           │
-│                                └─────────┘           │
-└──────────────────────────────────────────────────────┘
+SkillRank (CF Worker)              Prism (独立引擎)
+┌────────────────────┐             ┌──────────────────┐
+│ Registry (Hubs)    │             │ Scout Worker     │
+│ Crawler (SDK 调用) │  ◄─── API ──│  "收录什么？"    │
+│ Ranker (排名)      │             │  "从哪里收录？"  │
+│ D1 / Postgres      │             └──────────────────┘
+│ API:               │
+│  /rank             │
+│  /hubs             │
+│  /discover         │
+│  /recommend        │
+│  /search           │
+└────────────────────┘
 ```
 
-- **Registry**: Hub definitions (name, API endpoint, SDK package, crawl config)
-- **Crawler**: Scheduled worker that invokes hub SDKs to fetch skill counts, metadata
-- **Ranker**: PageRank-like scoring based on hub quality signals
-- **D1 / Railway Postgres**: Persistent storage for hub data and rank history
+- **Registry**: Hub 定义（名称、SDK 包、爬取配置）
+- **Crawler**: 定时调用 Hub SDK，收集 Skill 元数据
+- **Ranker**: 多维排名（Hub 质量 + Skill 平台适配性 + 创作者维度）
+- **API**: Prism Scout 和外部消费者的查询接口
+- **与 Prism 的关系**: SkillRank 是 Scout 的上游数据源，通过 HTTP API 解耦
 
 ## Reference Sub-Documents
 

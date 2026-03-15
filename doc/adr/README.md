@@ -10,7 +10,7 @@ create a new ADR that supersedes the original.
 <!-- INDEX:START -->
 | ADR | Title | Status | Date |
 |-----|-------|--------|------|
-| 001 | [Hub-as-Domain PageRank Model](001-hub-as-domain-pagerank-model.md) | Proposed | 2026-02-28 |
+| 001 | [Skill Discovery & Ranking Service for Content Creators](001-hub-as-domain-pagerank-model.md) | Proposed (revised 2026-02-28) | 2026-02-28 |
 <!-- INDEX:END -->
 
 ## Template
