@@ -8,7 +8,7 @@ The AI agent skill ecosystem is fragmented across many hubs — ClawHub, SkillKi
 
 **Key insight**: Skills are ephemeral metadata. Hubs are durable infrastructure. Rank the infrastructure, not the content.
 
-SkillRank is a pure infrastructure service — no UI, no business logic. Downstream consumers (e.g. [Skillet](https://github.com/ERerGB/skillet), Prism Scout) query its API.
+SkillRank is a pure infrastructure service — no UI, no business logic. Downstream consumers (e.g. [Skillet](https://github.com/the-mag-tech/skillet), Prism Scout) query its API.
 
 ## Architecture
 

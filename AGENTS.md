@@ -14,7 +14,7 @@ UI, or platform-specific content. Those belong in downstream consumers
 **Bidirectional feedback**: SkillRank receives semantic signals from Prism
 (citation density, contributor reputation, content quality) via `POST /signal`.
 V1 stores signals without using them in ranking; V2 integrates them into PageRank.
-@see [Skillet ADR-002](https://github.com/ERerGB/skillet/blob/main/doc/adr/002-bidirectional-feedback-contract.md)
+@decision skillet:002
 
 ## Mandatory Rules
 
