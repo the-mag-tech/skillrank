@@ -8,12 +8,13 @@
     "deploy": "wrangler deploy",
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
-    "generate-index": "tsx scripts/generate-doc-index.ts all",
-    "gen:index": "tsx scripts/generate-doc-index.ts all",
-    "doc:check": "tsx scripts/verify-doc-governance.ts",
-    "doc:governance": "pnpm gen:index && pnpm doc:check"
+    "generate-index": "doc-governance gen-index --root .",
+    "gen:index": "doc-governance gen-index --root .",
+    "doc:check": "doc-governance check --root .",
+    "doc:governance": "doc-governance run --root ."
   },
   "devDependencies": {
+    "@erergb/doc-governance": "git+https://github.com/the-mag-tech/dev-doc-governance.git#f99536933a99d905ee43bab4cf76001ca2252ecd",
     "typescript": "^5.7.0",
     "vitest": "^3.0.0",
     "wrangler": "^4.0.0",
