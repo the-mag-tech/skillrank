@@ -117,7 +117,7 @@ Search skills across all hubs.
 ### POST /signal
 
 Receive feedback signals from Prism.
-@see [Skillet ADR-002](https://github.com/ERerGB/skillet/blob/main/doc/adr/002-bidirectional-feedback-contract.md)
+@decision skillet:002
 
 **Request**
 ```json

@@ -4,7 +4,7 @@
 
 ```bash
 # 1. Clone
-git clone https://github.com/ERerGB/skillrank.git
+git clone https://github.com/the-mag-tech/skillrank.git
 cd skillrank
 
 # 2. Install dependencies
@@ -101,7 +101,7 @@ Never hand-edit between `<!-- INDEX:START -->` and `<!-- INDEX:END -->` markers.
 ## Key ADRs to Read First
 
 1. **[ADR-001](doc/adr/001-hub-as-domain-pagerank-model.md)** — Core ranking model
-2. **[Skillet ADR-002](https://github.com/ERerGB/skillet/blob/main/doc/adr/002-bidirectional-feedback-contract.md)** — Bidirectional contract with Prism
+2. `@decision skillet:002` — Bidirectional contract with Prism
 
 ## API Endpoints to Implement
 
