@@ -14,7 +14,7 @@
     "doc:governance": "doc-governance run --root ."
   },
   "devDependencies": {
-    "@erergb/doc-governance": "git+https://github.com/ERerGB/dev-doc-governance.git#f99536933a99d905ee43bab4cf76001ca2252ecd",
+    "@erergb/doc-governance": "git+https://github.com/the-mag-tech/dev-doc-governance.git#f99536933a99d905ee43bab4cf76001ca2252ecd",
     "typescript": "^5.7.0",
     "vitest": "^3.0.0",
     "wrangler": "^4.0.0",
