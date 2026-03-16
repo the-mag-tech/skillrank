@@ -9,10 +9,11 @@ create a new ADR that supersedes the original.
 
 <!-- INDEX:START -->
 | ADR | Title | Status | Date |
-| --- | --- | --- | --- |
+|-----|-------|--------|------|
 | 001 | [Hub-as-Domain PageRank Model](001-hub-as-domain-pagerank-model.md) | Proposed | 2026-02-28 |
 | 002 | [D1 Database Schema Design](002-d1-schema-design.md) | Proposed | 2026-02-28 |
 | 003 | [Capability Dedup Identity Principle](003-capability-dedup-identity-principle.md) | Proposed | 2026-03-15 |
+| 004 | [Registry Module Design](004-registry-module-design.md) | Proposed | 2026-03-16 |
 <!-- INDEX:END -->
 
 ## Template
